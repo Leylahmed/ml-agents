@@ -1,0 +1,29 @@
+{
+    "Find Target Test1": {
+        "checkpoints": [
+            {
+                "steps": 96150,
+                "file_path": "results\\test107\\Find Target Test1\\Find Target Test1-96150.onnx",
+                "reward": -0.7083333333333334,
+                "creation_time": 1658116563.2059395,
+                "auxillary_file_paths": [
+                    "results\\test107\\Find Target Test1\\Find Target Test1-96150.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 96150,
+            "file_path": "results\\test107\\Find Target Test1.onnx",
+            "reward": -0.7083333333333334,
+            "creation_time": 1658116563.2059395,
+            "auxillary_file_paths": [
+                "results\\test107\\Find Target Test1\\Find Target Test1-96150.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
