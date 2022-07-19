@@ -31,11 +31,12 @@ TagManager:
   - purpleGoal
   - tile
   - zone
+  - agent2
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - shootable
   - Water
   - UI
   - 

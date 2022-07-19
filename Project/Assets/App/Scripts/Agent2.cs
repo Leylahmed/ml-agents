@@ -13,9 +13,21 @@ public class Agent2 : Agent
 {
     [SerializeField] private float moveSpeed;
 
+    protected override void OnEnable()
+    {
+        EventManager.Instance.AddListener<ShootEvent>(ShootHandler);
+        EventManager.Instance.AddListener<ShootEvent2>(Shoot2Handler);
+    }
+
+    protected override void OnDisable()
+    {
+        EventManager.Instance.RemoveListener<ShootEvent>(ShootHandler);
+        EventManager.Instance.RemoveListener<ShootEvent2>(Shoot2Handler);
+    }
+
     public override void OnEpisodeBegin()
     {
-        transform.position = new Vector3(Random.Range(-20f, 20f), 0f, Random.Range(-20f, 20f));
+        transform.position = new Vector3(Random.Range(-5f, 5f), 1f, Random.Range(-5f, 5f));
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -38,7 +50,17 @@ public class Agent2 : Agent
             SetReward(-0.5f);
             EndEpisode();
         }
+    }
 
+    private void ShootHandler(ShootEvent eventDetails)
+    {
+        SetReward(-1.5f);
+        EndEpisode();
+    }
 
+    private void Shoot2Handler(ShootEvent2 eventDetails)
+    {
+        SetReward(+1.5f);
+        EndEpisode();
     }
 }
