@@ -1,0 +1,29 @@
+{
+    "2x2 Behaviour": {
+        "checkpoints": [
+            {
+                "steps": 24496,
+                "file_path": "results\\312\\2x2 Behaviour\\2x2 Behaviour-24496.onnx",
+                "reward": 0.699999988079071,
+                "creation_time": 1658328501.3102825,
+                "auxillary_file_paths": [
+                    "results\\312\\2x2 Behaviour\\2x2 Behaviour-24496.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 24496,
+            "file_path": "results\\312\\2x2 Behaviour.onnx",
+            "reward": 0.699999988079071,
+            "creation_time": 1658328501.3102825,
+            "auxillary_file_paths": [
+                "results\\312\\2x2 Behaviour\\2x2 Behaviour-24496.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
