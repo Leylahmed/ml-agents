@@ -32,6 +32,7 @@ TagManager:
   - tile
   - zone
   - agent2
+  - obstacle
   layers:
   - Default
   - TransparentFX

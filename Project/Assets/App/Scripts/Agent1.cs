@@ -5,24 +5,33 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
+using Unity.MLAgents.Policies;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
-using DynamicBox.EventManagement;
+
+public enum Teams
+{
+    Xbot = 0,
+    Ybot = 1
+}
 
 public class Agent1 : Agent
 {
     [SerializeField] private float moveSpeed;
 
-    protected override void OnEnable()
-    {
-        EventManager.Instance.AddListener<ShootEvent>(ShootHandler);
-        EventManager.Instance.AddListener<ShootEvent2>(Shoot2Handler);
-    }
+    [SerializeField] private LayerMask layerMask;
 
-    protected override void OnDisable()
+    public Teams team;
+
+    BehaviorParameters m_BehaviorParameters;
+
+
+
+    public override void Initialize()
     {
-        EventManager.Instance.RemoveListener<ShootEvent>(ShootHandler);
-        EventManager.Instance.RemoveListener<ShootEvent2>(Shoot2Handler);
+        m_BehaviorParameters = gameObject.GetComponent<BehaviorParameters>();
+
+        team = m_BehaviorParameters.TeamId == (int)Teams.Xbot ? Teams.Xbot : Teams.Ybot;
     }
 
     public override void OnEpisodeBegin()
@@ -41,6 +50,16 @@ public class Agent1 : Agent
         float moveZ = actionBuffers.ContinuousActions[1];
 
         transform.position += new Vector3(moveX, 0, moveZ) * (Time.deltaTime * moveSpeed);
+
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100f,layerMask))
+        {
+            if (hit.collider.CompareTag("agent"))
+            {
+                SetReward(+1.5f);
+                EndEpisode();
+            }
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,17 +69,10 @@ public class Agent1 : Agent
             SetReward(-0.5f);
             EndEpisode();
         }
-    }
-
-    private void ShootHandler(ShootEvent eventDetails)
-    {
-        SetReward(+1.5f);
-        EndEpisode();
-    }
-
-    private void Shoot2Handler(ShootEvent2 eventDetails)
-    {
-        SetReward(-1.5f);
-        EndEpisode();
+        else
+        {
+            SetReward(+0.5f);
+            EndEpisode();
+        }
     }
 }
