@@ -3,7 +3,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Policies;
 
-public enum Team
+public enum Team      
 {
     Blue = 0,
     Purple = 1

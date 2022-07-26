@@ -1,0 +1,29 @@
+{
+    "2vs2": {
+        "checkpoints": [
+            {
+                "steps": 3864,
+                "file_path": "results\\503\\2vs2\\2vs2-3864.onnx",
+                "reward": 261.2999741792679,
+                "creation_time": 1658809927.583568,
+                "auxillary_file_paths": [
+                    "results\\503\\2vs2\\2vs2-3864.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 3864,
+            "file_path": "results\\503\\2vs2.onnx",
+            "reward": 261.2999741792679,
+            "creation_time": 1658809927.583568,
+            "auxillary_file_paths": [
+                "results\\503\\2vs2\\2vs2-3864.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

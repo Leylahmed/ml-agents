@@ -7,12 +7,15 @@ public class Zone : MonoBehaviour
 {
     [SerializeField] private float zoneSpeed;
 
-    private void Update()
+    private void Update ()
     {
-        var transform1 = transform;
-        var localScale = transform1.localScale;
-        localScale = new Vector3(localScale.x - zoneSpeed * Time.deltaTime, localScale.y,
-            localScale.z - zoneSpeed * Time.deltaTime);
-        transform1.localScale = localScale;
+        if (transform.localScale.x > 0.01f)
+        {
+            var transform1 = transform;
+            var localScale = transform1.localScale;
+            localScale = new Vector3 (localScale.x - zoneSpeed * Time.deltaTime, localScale.y,
+                localScale.z - zoneSpeed * Time.deltaTime);
+            transform1.localScale = localScale;
+        }
     }
 }
