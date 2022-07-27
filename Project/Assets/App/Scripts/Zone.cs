@@ -9,7 +9,7 @@ public class Zone : MonoBehaviour
 
     private void Update ()
     {
-        if (transform.localScale.x > 0.01f)
+        if (transform.localScale.x > 0.3f)
         {
             var transform1 = transform;
             var localScale = transform1.localScale;

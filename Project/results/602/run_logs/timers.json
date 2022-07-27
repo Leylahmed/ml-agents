@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1658891691",
+        "python_version": "3.7.9 (tags/v3.7.9:13c94747c7, Aug 17 2020, 16:30:00) [MSC v.1900 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\User\\Documents\\Unity Project\\ml-agents\\Project\\python-envs\\sample-env\\Scripts\\mlagents-learn config/SoccerTwos.YAML --run-id=602",
+        "mlagents_version": "0.28.0",
+        "mlagents_envs_version": "0.28.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cu110",
+        "numpy_version": "1.21.6",
+        "end_time_seconds": "1658891709"
+    },
+    "total": 18.686014,
+    "count": 1,
+    "self": 0.009009500000001225,
+    "children": {
+        "run_training.setup": {
+            "total": 0.11266719999999997,
+            "count": 1,
+            "self": 0.11266719999999997
+        },
+        "TrainerController.start_learning": {
+            "total": 18.5643373,
+            "count": 1,
+            "self": 7.579999999762776e-05,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 18.5642496,
+                    "count": 1,
+                    "self": 18.5642496
+                },
+                "TrainerController._save_models": {
+                    "total": 1.1900000000508726e-05,
+                    "count": 1,
+                    "self": 1.1900000000508726e-05
+                }
+            }
+        }
+    }
+}
