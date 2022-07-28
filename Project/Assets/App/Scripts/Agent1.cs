@@ -12,7 +12,7 @@ public enum Teams
     Ybot = 1
 }
 
-public class Agent1 : Agent, IAgent1Interface
+public class Agent1 : Agent, IDamagable
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotateSpeed;
@@ -116,7 +116,7 @@ public class Agent1 : Agent, IAgent1Interface
             if (hit.collider.CompareTag (opponentTag))
             {
                 shoot = true;
-                hit.collider.GetComponent<IAgent1Interface> ().GetDamage (opponentID);
+                hit.collider.GetComponent<IDamagable> ().GetDamage (opponentID);
                 SetReward (+1.5f);
             }
             else

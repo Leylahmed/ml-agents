@@ -1,5 +1,5 @@
 
-public interface IAgent1Interface
+public interface IDamagable
 {
     public void GetDamage (int id);
 }
