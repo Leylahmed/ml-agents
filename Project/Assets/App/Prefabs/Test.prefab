@@ -420,6 +420,8 @@ MonoBehaviour:
   winMaterial: {fileID: 2100000, guid: fc82dfb633e1f8e46a30b2245b0a7f90, type: 2}
   loseMaterial: {fileID: 2100000, guid: eb30468eb4839104db388efcffab490b, type: 2}
   floorMeshRenderer: {fileID: 2154236035048832934}
+  distance: 0
+  previousDistance: 0
 --- !u!114 &2154236035899047324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,8 +434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecisionPeriod: 5
-  TakeActionsBetweenDecisions: 1
+  DecisionPeriod: 1
+  TakeActionsBetweenDecisions: 0
 --- !u!1 &6051093905553192118
 GameObject:
   m_ObjectHideFlags: 0
